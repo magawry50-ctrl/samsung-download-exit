@@ -16,6 +16,9 @@ internal sealed class MainForm : Form
     public MainForm()
     {
         Text = "Samsung Download Exit";
+        var executableIcon = Icon.ExtractAssociatedIcon(Environment.ProcessPath ?? Application.ExecutablePath);
+        if (executableIcon is not null)
+            Icon = executableIcon;
         RightToLeft = RightToLeft.Yes;
         RightToLeftLayout = true;
         Font = new Font("Segoe UI", 10F);

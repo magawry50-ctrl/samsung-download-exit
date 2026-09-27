@@ -9,6 +9,8 @@ dotnet publish $project -c Release -r win-x64 --self-contained true
 New-Item -ItemType Directory -Path $release -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $publish 'Samsung Download Exit.exe') -Destination $release -Force
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'README.md') -Destination $release -Force
+Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'CHANGELOG.md') -Destination $release -Force
+Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'LICENSE') -Destination $release -Force
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'THIRD-PARTY-NOTICES.md') -Destination $release -Force
 
 Write-Host "Release created at: $release"
